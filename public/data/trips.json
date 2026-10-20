@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Cancún",
+    "price": 12500,
+    "image": "https://picsum.photos/seed/cancun/600/400",
+    "description": "Playas de arena blanca y mar turquesa en el Caribe mexicano. Incluye hotel todo incluido y traslados.",
+    "category": "Playa",
+    "duration": "5 días / 4 noches",
+    "availability": 20
+  },
+  {
+    "id": 2,
+    "name": "Real de Catorce",
+    "price": 3800,
+    "image": "https://picsum.photos/seed/catorce/600/400",
+    "description": "Pueblo minero en el altiplano potosino. Recorrido por el túnel Ogarrio y paseo en willys al pueblo fantasma.",
+    "category": "Pueblo Mágico",
+    "duration": "2 días / 1 noche",
+    "availability": 15
+  },
+  {
+    "id": 3,
+    "name": "Huasteca Potosina",
+    "price": 5200,
+    "image": "https://picsum.photos/seed/huasteca/600/400",
+    "description": "Cascadas de Tamul y Micos, Sótano de las Golondrinas y el Jardín Surrealista de Xilitla.",
+    "category": "Aventura",
+    "duration": "3 días / 2 noches",
+    "availability": 12
+  },
+  {
+    "id": 4,
+    "name": "Oaxaca",
+    "price": 7400,
+    "image": "https://picsum.photos/seed/oaxaca/600/400",
+    "description": "Centro histórico, Monte Albán, Hierve el Agua y recorrido gastronómico por mercados locales.",
+    "category": "Cultural",
+    "duration": "4 días / 3 noches",
+    "availability": 18
+  },
+  {
+    "id": 5,
+    "name": "Puerto Vallarta",
+    "price": 9800,
+    "image": "https://picsum.photos/seed/vallarta/600/400",
+    "description": "Malecón, Bahía de Banderas y excursión en barco a Los Arcos e Islas Marietas.",
+    "category": "Playa",
+    "duration": "4 días / 3 noches",
+    "availability": 25
+  },
+  {
+    "id": 6,
+    "name": "San Miguel de Allende",
+    "price": 4600,
+    "image": "https://picsum.photos/seed/sanmiguel/600/400",
+    "description": "Calles empedradas, la Parroquia de San Miguel Arcángel y aguas termales en La Gruta.",
+    "category": "Pueblo Mágico",
+    "duration": "3 días / 2 noches",
+    "availability": 10
+  },
+  {
+    "id": 7,
+    "name": "Barrancas del Cobre",
+    "price": 11200,
+    "image": "https://picsum.photos/seed/barrancas/600/400",
+    "description": "Viaje en el tren Chepe, teleférico y tirolesa en el parque de aventura de Divisadero.",
+    "category": "Aventura",
+    "duration": "5 días / 4 noches",
+    "availability": 8
+  },
+  {
+    "id": 8,
+    "name": "Ciudad de México",
+    "price": 6300,
+    "image": "https://picsum.photos/seed/cdmx/600/400",
+    "description": "Zócalo, Museo Nacional de Antropología, Teotihuacán y trajineras en Xochimilco.",
+    "category": "Cultural",
+    "duration": "4 días / 3 noches",
+    "availability": 30
+  }
+]

@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <a routerLink="/home" class="navbar-brand">Explora<span>Web</span></a>
+
+  <ul class="navbar-links">
+    <li><a routerLink="/home" routerLinkActive="active" class="nav-item">Inicio</a></li>
+    <li><a routerLink="/catalog" routerLinkActive="active" class="nav-item">Catálogo</a></li>
+    <li><a routerLink="/admin" routerLinkActive="active" class="nav-item">Configurar catálogo</a></li>
+    <li><a routerLink="/login" routerLinkActive="active" class="nav-item login-link">Iniciar sesión</a></li>
+  </ul>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 ExploraWeb · Agencia de viajes</p>
+</footer>

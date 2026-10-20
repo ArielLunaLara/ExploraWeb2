@@ -1,0 +1,22 @@
+<section class="hero">
+  <h1>Descubre México con ExploraWeb</h1>
+  <p>Playas, pueblos mágicos, aventura y cultura. Encuentra tu próximo viaje y reserva en minutos.</p>
+  <a routerLink="/catalog" class="hero-btn">Ver catálogo</a>
+</section>
+
+<section class="gallery-section">
+  <h2 class="page-title">Nuestros destinos</h2>
+
+  @if (loading()) {
+    <p class="empty-message">Cargando destinos...</p>
+  } @else {
+    <div class="gallery">
+      @for (trip of gallery(); track trip.id) {
+        <a routerLink="/catalog" class="gallery-item">
+          <img [src]="trip.image" [alt]="'Foto de ' + trip.name">
+          <span>{{ trip.name }}</span>
+        </a>
+      }
+    </div>
+  }
+</section>

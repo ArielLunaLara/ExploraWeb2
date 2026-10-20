@@ -1,0 +1,22 @@
+<h1 class="page-title">Catálogo de viajes [{{ tripCount() }} destinos]</h1>
+
+<app-controls (orderByNameClick)="orderByName()" (orderByPriceClick)="orderByPrice()" (reverseClick)="reverse()" (search)="search($event)"></app-controls>
+
+<div class="cards-container">
+
+  @if (loading()) {
+    <p class="empty-message">Cargando catálogo...</p>
+  } @else if (error()) {
+    <div class="empty-message">
+      <p class="error-text">{{ error() }}</p>
+      <button class="retry-btn" (click)="retry()">Reintentar</button>
+    </div>
+  } @else {
+    @for (trip of trips(); track trip.id) {
+      <app-trip-card [trip]="trip"></app-trip-card>
+    } @empty {
+      <p class="empty-message">No hay viajes que coincidan con tu búsqueda</p>
+    }
+  }
+
+</div>

@@ -1,0 +1,92 @@
+<h1 class="page-title">Configurar catálogo</h1>
+
+<form [formGroup]="tripForm" (ngSubmit)="onSubmit()" class="form-card admin-form">
+  <h2>Añadir viaje</h2>
+
+  <div class="form-control-group">
+    <label for="name">Nombre del destino</label>
+    <input id="name" type="text" placeholder="Ej. Cancún" formControlName="name">
+    @if (tripForm.get('name')?.hasError('required') && tripForm.get('name')?.touched) {
+      <span class="error-text">El nombre es obligatorio.</span>
+    }
+    @if (tripForm.get('name')?.hasError('minlength') && tripForm.get('name')?.touched) {
+      <span class="error-text">Debe tener al menos 3 caracteres.</span>
+    }
+  </div>
+
+  <div class="form-row">
+    <div class="form-control-group">
+      <label for="price">Precio por persona (MXN)</label>
+      <input id="price" type="number" placeholder="Ej. 12500" formControlName="price">
+      @if (tripForm.get('price')?.invalid && tripForm.get('price')?.touched) {
+        <span class="error-text">Ingresa un precio mayor a 0.</span>
+      }
+    </div>
+
+    <div class="form-control-group">
+      <label for="availability">Lugares disponibles</label>
+      <input id="availability" type="number" placeholder="Ej. 20" formControlName="availability">
+      @if (tripForm.get('availability')?.invalid && tripForm.get('availability')?.touched) {
+        <span class="error-text">Ingresa 0 o más lugares.</span>
+      }
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-control-group">
+      <label for="category">Categoría</label>
+      <select id="category" formControlName="category">
+        <option value="" disabled>Selecciona una</option>
+        @for (category of categories; track category) {
+          <option [value]="category">{{ category }}</option>
+        }
+      </select>
+      @if (tripForm.get('category')?.invalid && tripForm.get('category')?.touched) {
+        <span class="error-text">Elige una categoría.</span>
+      }
+    </div>
+
+    <div class="form-control-group">
+      <label for="duration">Duración</label>
+      <input id="duration" type="text" placeholder="Ej. 3 días / 2 noches" formControlName="duration">
+      @if (tripForm.get('duration')?.invalid && tripForm.get('duration')?.touched) {
+        <span class="error-text">La duración es obligatoria.</span>
+      }
+    </div>
+  </div>
+
+  <div class="form-control-group">
+    <label for="image">URL de la foto</label>
+    <input id="image" type="text" placeholder="https://..." formControlName="image">
+    @if (tripForm.get('image')?.hasError('required') && tripForm.get('image')?.touched) {
+      <span class="error-text">La foto es obligatoria.</span>
+    }
+    @if (tripForm.get('image')?.hasError('pattern') && tripForm.get('image')?.touched) {
+      <span class="error-text">La URL debe empezar con http:// o https://</span>
+    }
+  </div>
+
+  <div class="form-control-group">
+    <label for="description">Descripción</label>
+    <textarea id="description" rows="3" placeholder="¿Qué incluye el viaje?" formControlName="description"></textarea>
+    @if (tripForm.get('description')?.invalid && tripForm.get('description')?.touched) {
+      <span class="error-text">Escribe al menos 10 caracteres.</span>
+    }
+  </div>
+
+  @if (successMessage()) {
+    <p class="success-text">{{ successMessage() }}</p>
+  }
+
+  <button type="submit" class="btn-primary" [disabled]="tripForm.invalid">Guardar viaje</button>
+</form>
+
+<h2 class="page-title">Viajes en el catálogo ({{ trips().length }})</h2>
+
+<div class="cards-container">
+  @for (trip of trips(); track trip.id) {
+    <app-trip-card [trip]="trip" [showDelete]="true" (deleteClick)="deleteTrip($event)"></app-trip-card>
+  } @empty {
+    <p class="empty-message">El catálogo está vacío</p>
+  }
+</div>

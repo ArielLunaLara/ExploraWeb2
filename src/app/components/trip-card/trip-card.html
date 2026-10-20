@@ -1,0 +1,22 @@
+<article class="trip-card">
+  <div class="card-image">
+    <img [src]="trip().image" [alt]="'Foto de ' + trip().name">
+    <span class="category-badge">{{ trip().category }}</span>
+  </div>
+
+  <div class="card-body">
+    <h2 class="trip-name">{{ trip().name }}</h2>
+    <p class="trip-duration">{{ trip().duration }}</p>
+    <p class="trip-price">{{ trip().price | currency:'MXN':'symbol-narrow':'1.0-0' }} <span>por persona</span></p>
+
+    @if (trip().availability > 0) {
+      <p class="availability">{{ trip().availability }} lugares disponibles</p>
+    } @else {
+      <p class="availability sold-out">Agotado</p>
+    }
+
+    @if (showDelete()) {
+      <button class="delete-btn" (click)="onDeleteClick()">Eliminar</button>
+    }
+  </div>
+</article>

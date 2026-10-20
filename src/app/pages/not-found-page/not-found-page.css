@@ -1,0 +1,26 @@
+.not-found {
+  text-align: center;
+  margin: 80px auto;
+  color: #64748b;
+}
+
+.not-found h1 {
+  font-size: 4rem;
+  margin: 0;
+  color: #0284c7;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: #0284c7;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  background: #0369a1;
+}

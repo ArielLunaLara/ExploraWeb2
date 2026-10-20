@@ -1,0 +1,82 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 16px 32px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.navbar-brand span {
+  color: #0284c7;
+}
+
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-item:hover {
+  color: #0284c7;
+}
+
+.active {
+  color: #0f172a;
+  font-weight: bold;
+}
+
+.login-link {
+  padding: 8px 16px;
+  border: 1px solid #0284c7;
+  border-radius: 8px;
+  color: #0284c7;
+}
+
+.login-link.active,
+.login-link:hover {
+  background: #0284c7;
+  color: #ffffff;
+}
+
+main {
+  min-height: calc(100vh - 160px);
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 14px 16px;
+  }
+
+  .navbar-links {
+    gap: 14px;
+  }
+}

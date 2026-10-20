@@ -1,0 +1,13 @@
+<div class="controls">
+  <!-- El form permite buscar también con Enter -->
+  <form class="search-row" (ngSubmit)="onSearch()">
+    <input type="text" [formControl]="searchControl" placeholder="Buscar por destino o categoría...">
+    <button type="submit">Buscar</button>
+  </form>
+
+  <div class="order-row">
+    <button type="button" (click)="orderByName()">Ordenar por nombre</button>
+    <button type="button" (click)="orderByPrice()">Ordenar por precio</button>
+    <button type="button" (click)="reverse()">Invertir</button>
+  </div>
+</div>
